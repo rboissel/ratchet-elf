@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ratchet-elf", "ratchet-elf\ratchet-elf.csproj", "{261F52BE-9C22-4198-9CCE-459EB9AE6379}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{49BC759B-774A-4C6D-BF8B-B86013711ACD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readelf", "Samples\readelf\readelf.csproj", "{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{261F52BE-9C22-4198-9CCE-459EB9AE6379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{261F52BE-9C22-4198-9CCE-459EB9AE6379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{261F52BE-9C22-4198-9CCE-459EB9AE6379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{261F52BE-9C22-4198-9CCE-459EB9AE6379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C} = {49BC759B-774A-4C6D-BF8B-B86013711ACD}
+	EndGlobalSection
+EndGlobal
