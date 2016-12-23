@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readelf", "Samples\readelf\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{36B590E3-EC09-4946-9C24-1A5F05709104}"
 	ProjectSection(SolutionItems) = preProject
-		build\Ratchet.Code.Elf.nuspec = build\Ratchet.Code.Elf.nuspec
+		build\Ratchet.IO.Format.nuspec = build\Ratchet.IO.Format.nuspec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ratchet-elf-net40", "build\ratchet-elf-net40\ratchet-elf-net40.csproj", "{AD469DCA-A423-4895-AB9B-B39B8E4ED0D6}"
