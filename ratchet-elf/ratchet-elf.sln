@@ -9,6 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{49BC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readelf", "Samples\readelf\readelf.csproj", "{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{36B590E3-EC09-4946-9C24-1A5F05709104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ratchet-elf-net40", "build\ratchet-elf-net40\ratchet-elf-net40.csproj", "{AD469DCA-A423-4895-AB9B-B39B8E4ED0D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ratchet-elf-net45", "build\ratchet-elf-net45\ratchet-elf-net45.csproj", "{898E61C5-E17B-472D-B6CB-C19EA5B1CB57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,11 +29,21 @@ Global
 		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD469DCA-A423-4895-AB9B-B39B8E4ED0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD469DCA-A423-4895-AB9B-B39B8E4ED0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD469DCA-A423-4895-AB9B-B39B8E4ED0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD469DCA-A423-4895-AB9B-B39B8E4ED0D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898E61C5-E17B-472D-B6CB-C19EA5B1CB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898E61C5-E17B-472D-B6CB-C19EA5B1CB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898E61C5-E17B-472D-B6CB-C19EA5B1CB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898E61C5-E17B-472D-B6CB-C19EA5B1CB57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C} = {49BC759B-774A-4C6D-BF8B-B86013711ACD}
+		{AD469DCA-A423-4895-AB9B-B39B8E4ED0D6} = {36B590E3-EC09-4946-9C24-1A5F05709104}
+		{898E61C5-E17B-472D-B6CB-C19EA5B1CB57} = {36B590E3-EC09-4946-9C24-1A5F05709104}
 	EndGlobalSection
 EndGlobal

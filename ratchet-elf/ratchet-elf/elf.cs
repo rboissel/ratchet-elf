@@ -32,9 +32,19 @@ namespace Ratchet.IO.Format
     /// </summary>
     public static class Elf
     {
+        public abstract class Mapper
+        {
+            public abstract IntPtr MapMemory(ulong Size, MemoryProtection Protection);
+            public abstract void UnmapMemory(IntPtr Pointer, ulong Size);
+            public abstract IntPtr ChangeMemoryProtection(IntPtr Pointer, ulong Size, MemoryProtection Protection);
+            public virtual void Copy(byte[] Source, ulong Offset, ulong Size, IntPtr Destination) { System.Runtime.InteropServices.Marshal.Copy(Source, (int)Offset, Destination, (int)Size); }
+        }
+
         public class Assembly
         {
+            internal byte[] _Data = null;
             List<Section> _Sections = new List<Section>();
+            internal IntPtr _MappedAddress = new IntPtr();
 
             /// <summary>
             /// Return a list of all the section in this executable.
@@ -115,6 +125,8 @@ namespace Ratchet.IO.Format
                 }
                 return null;
             }
+
+            public void Map(Mapper Mapper) { elf_mapper.MapAssembly(this, Mapper); }
         }
 
         public class GlobalOffsetTable
@@ -144,7 +156,13 @@ namespace Ratchet.IO.Format
 
             internal IntPtr _MappedAddress = new IntPtr();
             internal Section _Section = null;
+
             internal SymbolType _Type = SymbolType.STT_NOTYPE;
+
+            /// <summary>
+            /// Get the type associated to this symbol
+            /// </summary>
+            public SymbolType Type { get { return _Type; } }
             internal ulong _Section_Offset = 0;
 
             internal string _Name = "";
@@ -175,9 +193,14 @@ namespace Ratchet.IO.Format
             internal ulong __sh_addralign = 0;
             internal ulong __sh_entsize = 0;
 
-            internal IntPtr _Mapping = new IntPtr();
+            internal IntPtr _MappedAddress = new IntPtr();
 
             internal MemoryProtection _Protection = MemoryProtection.NO_ACCESS;
+
+            /// <summary>
+            /// Get the requested memory protection for this section
+            /// </summary>
+            public MemoryProtection Protection { get { return _Protection; } }
 
             internal string _Name = "";
             /// <summary>
@@ -279,7 +302,7 @@ namespace Ratchet.IO.Format
         /// </summary>
         /// <param name="AssemblyData">A byte array containing the elf file</param>
         /// <returns>the parsed assembly</returns>
-        public static Assembly ReadElf(byte[] AssemblyData)
+        public static Assembly Read(byte[] AssemblyData)
         {
             if (AssemblyData.Length < 0x32) { return null; }
             bool _64bits = false;
@@ -299,7 +322,7 @@ namespace Ratchet.IO.Format
             }
 
             Assembly assembly = new Assembly();
-
+            assembly._Data = (byte[])AssemblyData.Clone();
             if (_64bits)
             {
                 if (littleEndian) { assembly._Class = AssemblyClass.LITTLE_ENDIAN_64BITS; }

@@ -4,33 +4,32 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{24C9FD19-4E8A-4D60-834E-E7D1F823EB4C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{898E61C5-E17B-472D-B6CB-C19EA5B1CB57}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>readelf</RootNamespace>
-    <AssemblyName>readelf</AssemblyName>
+    <RootNamespace>ratchet_elf</RootNamespace>
+    <AssemblyName>ratchet-elf</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\samples\</OutputPath>
+    <OutputPath>..\..\bin\Debug\ratchet-msil\lib\net45\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\Debug\ratchet-msil\lib\net45\ratchet-elf.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\samples\</OutputPath>
+    <OutputPath>..\..\bin\Release\ratchet-elf\lib\net45\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\Release\ratchet-elf\lib\net45\ratchet-elf.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,17 +42,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="..\..\ratchet-elf\elf-got.cs">
+      <Link>elf-got.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ratchet-elf\elf-mapper.cs">
+      <Link>elf-mapper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ratchet-elf\elf-parser.cs">
+      <Link>elf-parser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ratchet-elf\elf-relocations.cs">
+      <Link>elf-relocations.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ratchet-elf\elf-sections.cs">
+      <Link>elf-sections.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ratchet-elf\elf-symbol.cs">
+      <Link>elf-symbol.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ratchet-elf\elf.cs">
+      <Link>elf.cs</Link>
+    </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ratchet-elf\ratchet-elf.csproj">
-      <Project>{261f52be-9c22-4198-9cce-459eb9ae6379}</Project>
-      <Name>ratchet-elf</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

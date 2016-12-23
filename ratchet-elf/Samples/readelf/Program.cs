@@ -25,7 +25,7 @@ namespace readelf
             }
 
             byte[] data = System.IO.File.ReadAllBytes(args[0]);
-            Elf.Assembly assembly = Elf.ReadElf(data);
+            Elf.Assembly assembly = Elf.Read(data);
             Console.WriteLine("dependencies:");
             foreach (string dep in assembly.Dependencies) { Console.WriteLine(" * " + dep); }
             Console.WriteLine("sections:");
