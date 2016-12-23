@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
+  <metadata>
+    <id>Ratchet.Code.Elf</id>
+    <version>1.0.0.0</version>
+    <authors>rboissel</authors>
+    <owners>rboissel</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/rboissel/ratchet-elf</projectUrl>
+    <iconUrl>https://github.com/rboissel/ratchet-elf/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes></releaseNotes>
+    <description>Ratchet Elf is part of the Ratchet project and provide tools to manipulate Elf executables within the application. This tool is design to help user read write and even map elf executable within a C# application </description>
+    <copyright>Copyright ©2016 Raphael Boissel</copyright>
+    <language>en-US</language>
+    <tags>ratchet elf executable</tags>
+  </metadata>
+</package>
